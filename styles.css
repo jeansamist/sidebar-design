@@ -1,0 +1,196 @@
+:root {
+  --bg: #11101d;
+  --sidebar-bg: #fff;
+  --sidebar-bg-opact: rgba(221, 221, 221, 010);
+  --sidebar-width: 250px;
+  --fs: 16px;
+  --color: #11101d;
+  --ff: Calibri, Verdana, sans-serif;
+}
+/* :root {
+  --bg: #fff;
+  --sidebar-bg: #fff;
+  --sidebar-bg-opact: #1d1b31;
+  --sidebar-width: 250px;
+  --fs: 16px;
+  --color: #fff;
+  --ff: Calibri, Verdana, sans-serif;
+} */
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff);
+  font-size: var(--fs);
+  background: var(--bg);
+  color: var(--color);
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  height: calc(100vh - 1em);
+  /* margin: 0.5em; */
+  position: relative;
+  /* border-radius: 20px; */
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  transition: width 0.5s ease-in-out;
+}
+
+.sidebar > .sidebar-head {
+  padding: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar > .sidebar-head > .sidebar-brand {
+  font-size: 2em;
+  width: calc(100% - 30px);
+  font-weight: bold;
+  opacity: 1;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.sidebar > .sidebar-head > .sidebar-menu-btn {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.sidebar > .sidebar-head > .sidebar-menu-btn > div {
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background: var(--color);
+}
+
+.sidebar > .sidebar-head > .sidebar-menu-btn > div:nth-child(2) {
+  width: 70%;
+}
+
+.sidebar > .sidebar-head > .sidebar-menu-btn > div:nth-child(3) {
+  width: 30%;
+}
+
+.sidebar > .sidebar-user {
+  width: calc(100% - 1em);
+  margin: 0 0.5em;
+  height: 50px;
+  background: var(--sidebar-bg-opact);
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  line-height: 0;
+  font-weight: bold;
+  margin-bottom: 2em;
+  transition: width 0.5s ease-in-out, margin 0.5s ease-in-out;
+}
+
+.sidebar > .sidebar-user > .user-avatar {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  margin-right: 1em;
+  background: var(--color) url("./avatar.jpg") no-repeat center / cover;
+  border-radius: 20px;
+}
+
+.sidebar > .sidebar-user > .user-name {
+  width: calc(100% - (1em + 5px));
+  transition: width 0.5s ease-in-out, opacity 0.7s ease-in-out;
+}
+.sidebar > .sidebar-links > .sidebar-link {
+  display: flex;
+  height: 50px;
+  margin: 0 1em;
+  margin-bottom: 1em;
+  display: flex;
+  border-radius: 10px;
+  font-weight: bold;
+  align-items: center;
+  line-height: 0;
+  opacity: 1;
+  transition: width 0.5s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.sidebar > .sidebar-links > .sidebar-link > .label {
+  opacity: 1;
+  transition: width 0.5s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.sidebar > .sidebar-links > .sidebar-link > svg path {
+  fill:  var(--color);
+}
+
+.sidebar > .sidebar-links > .sidebar-link > svg {
+  margin: 0 1em;
+}
+
+.sidebar > .sidebar-links > .sidebar-link:hover,
+.sidebar > .sidebar-links > .sidebar-link.active {
+  color: var(--sidebar-bg);
+  background: var(--color);
+}
+
+.sidebar > .sidebar-links > .sidebar-link:hover svg path,
+.sidebar > .sidebar-links > .sidebar-link.active svg path {
+  fill: var(--sidebar-bg);
+}
+
+.sidebar.min {
+  width: calc(50px + 2em);
+}
+
+
+.sidebar.min > .sidebar-head > .sidebar-brand {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+.sidebar.min > .sidebar-head {
+  justify-content: center;
+}
+.sidebar.min > .sidebar-user > .user-name {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar.min > .sidebar-user {
+  width: 50px;
+  display: block;
+  margin: 0.5em 1em;
+  margin-bottom: 2em;
+}
+.sidebar.min > .sidebar-user > .user-avatar {
+  /* margin: 5px; */
+  transform: translateY(5px);
+}
+
+.sidebar.min > .sidebar-links > .sidebar-link > .label {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
