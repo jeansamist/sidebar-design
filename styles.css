@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --bg: #11101d;
   --sidebar-bg: #fff;
   --sidebar-bg-opact: rgba(221, 221, 221, 010);
@@ -6,16 +6,16 @@
   --fs: 16px;
   --color: #11101d;
   --ff: Calibri, Verdana, sans-serif;
-}
-/* :root {
+} */
+:root {
   --bg: #fff;
-  --sidebar-bg: #fff;
+  --sidebar-bg: #11101d;
   --sidebar-bg-opact: #1d1b31;
   --sidebar-width: 250px;
   --fs: 16px;
   --color: #fff;
   --ff: Calibri, Verdana, sans-serif;
-} */
+}
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -44,7 +44,7 @@ main {
 .sidebar {
   width: var(--sidebar-width);
   background: var(--sidebar-bg);
-  height: calc(100vh - 1em);
+  height: calc(100vh);
   /* margin: 0.5em; */
   position: relative;
   /* border-radius: 20px; */
@@ -55,6 +55,7 @@ main {
 .sidebar > .sidebar-head {
   padding: 1em;
   margin-bottom: 1em;
+  cursor: move;
   display: flex;
   justify-content: space-between;
   align-items: center;
